@@ -1,0 +1,2 @@
+class WordTemp < ApplicationRecord
+end
