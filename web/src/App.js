@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -29,20 +30,18 @@ function App() {
             <Card.Body>
               <Card.Title>Please follow the steps below.</Card.Title>
               <Card.Text>
-                <ul>
-                  <li>Click on the letters to form a word.</li>
-                  <li>3 or 4 letter word gets 1 point.</li>
-                  <li>5 letter word gets 2 points.</li>
-                  <li>6 letter word gets 3 points.</li>
-                  <li>7 letter word gets 4 points.</li>
-                  <li>8 or more letter word gets 11 points.</li>
-                  <li>The letters cannot be clicked twice. If clicked, the word will be reset.</li>
-                  <li>Once the word is complete click on submit.</li>
-                  <li>To reset the word click on reset.</li>
-                  <li>There will be a 3 minute time for the round.</li>
-                  <li>To restart the game, click on restart.</li>
-                </ul>
-
+                 Click on the letters to form a word.<br/>
+                 3 or 4 letter word gets 1 point.<br/>
+                 5 letter word gets 2 points.<br/>
+                 6 letter word gets 3 points.<br/>
+                 7 letter word gets 4 points.<br/>
+                 8 or more letter word gets 11 points.<br/>
+                 The letters cannot be clicked twice. If clicked, the word will be reset.<br/>
+                 Once the word is complete click on submit.<br/>
+                 To reset the word click on reset.<br/>
+                 There will be a 3 minute time for the round.<br/>
+                 To restart the game, click on restart.
+          
               </Card.Text>
             </Card.Body>
           </Card>
