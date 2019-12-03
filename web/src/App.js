@@ -28,7 +28,7 @@ function App() {
       <Row>
         <Col md="8">
           <button onClick={ (e) => {
-            dispatch(increment());
+            dispatch(increment(3));
             console.log(e);
           } }>+</button>
           <button onClick={ () => dispatch(descrement()) }>-</button>
