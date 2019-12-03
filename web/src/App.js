@@ -7,9 +7,12 @@ import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
 
-
+import {useSelector, useDispatch} from 'react-redux';
+import {increment, descrement} from './actions';
 
 function App() {
+  const counter = useSelector(state => state.counterReducer);
+  const dispatch = useDispatch();
   return (
     <Container fluid="true">
       <Navbar bg="dark" variant="dark">
@@ -17,13 +20,19 @@ function App() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Score: 0
+            Score: {counter}
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
       <hr/>
       <Row>
-        <Col md="8">box goes here</Col>
+        <Col md="8">
+          <button onClick={ (e) => {
+            dispatch(increment());
+            console.log(e);
+          } }>+</button>
+          <button onClick={ () => dispatch(descrement()) }>-</button>
+        </Col>
         <Col md="4">
           <Card>
             <Card.Header as="h5">Rules</Card.Header>
