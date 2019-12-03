@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
 
 
+
 function App() {
   return (
     <Container fluid="true">
@@ -22,13 +23,26 @@ function App() {
       <hr/>
       <Row>
         <Col md="8">box goes here</Col>
-        <Col md="2">
+        <Col md="4">
           <Card>
             <Card.Header as="h5">Rules</Card.Header>
             <Card.Body>
-              <Card.Title>For The Game</Card.Title>
+              <Card.Title>Please follow the steps below.</Card.Title>
               <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
+                <ul>
+                  <li>Click on the letters to form a word.</li>
+                  <li>3 or 4 letter word gets 1 point.</li>
+                  <li>5 letter word gets 2 points.</li>
+                  <li>6 letter word gets 3 points.</li>
+                  <li>7 letter word gets 4 points.</li>
+                  <li>8 or more letter word gets 11 points.</li>
+                  <li>The letters cannot be clicked twice. If clicked, the word will be reset.</li>
+                  <li>Once the word is complete click on submit.</li>
+                  <li>To reset the word click on reset.</li>
+                  <li>There will be a 3 minute time for the round.</li>
+                  <li>To restart the game, click on restart.</li>
+                </ul>
+
               </Card.Text>
             </Card.Body>
           </Card>
