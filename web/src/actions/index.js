@@ -11,3 +11,10 @@ export const descrement = () => {
     type : 'DECREMENT'
   }
 }
+
+export const letters = (data) => {
+  return {
+    type : 'Letters',
+    payload: data
+  }
+}

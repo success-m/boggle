@@ -13,9 +13,15 @@ let store = createStore(
 		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 	);
 
-store.subscribe(() => console.log(store.getState()));
+//store.subscribe(() => console.log(store.getState()));
 
 //store.dispatch(increment());
+// let GetLetters = () => {
+//   $.get('http://localhost:3000', (r) => store.dispatch(letters(r)));
+
+// }
+
+
 
 ReactDOM.render(
 	<Provider store={store}>

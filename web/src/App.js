@@ -10,11 +10,15 @@ import Nav from './components/nav';
 import Rules from './components/rules';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {increment, descrement} from './actions';
+import {increment, descrement, letters} from './actions';
 
-function App() {
-  const counter = useSelector(state => state.counterReducer);
-  const dispatch = useDispatch();
+class App extends React.Component {
+
+render() {
+  // const counter = useSelector(state => state.counterReducer);
+//  const letters = useSelector(state => state.lettersReducer);
+  // const dispatch = useDispatch();
+
   return (
     <Container fluid="true">
       <Nav></Nav>
@@ -22,10 +26,13 @@ function App() {
       <Row>
         <Col md="8">
          <Button variant="outline-success" onClick={ (e) => {
-            dispatch(increment(3));
+            // dispatch(increment(3));
             console.log(e);
           } }>Submit</Button>
-          <Button variant="outline-danger" onClick={ () => dispatch(descrement()) }>
+          <Button variant="outline-danger" onClick={ (e) => {
+            // dispatch(descrement())
+          console.log(e);
+        } }>
             Cancel
           </Button>
         </Col>
@@ -35,6 +42,7 @@ function App() {
       </Row>
     </Container>
   );
+}
 }
 
 export default App;
