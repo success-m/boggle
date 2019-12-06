@@ -16,14 +16,24 @@ import {increment, descrement, letters} from './actions';
 function App() {
   const counter = useSelector(state => state.counterReducer);
   const letters = useSelector(state => state.lettersReducer);
+  
   const dispatch = useDispatch();
-
   return (
     <Container fluid="true">
       <Nav></Nav>
       <hr/>
       <Row>
-        <Col md="8">
+        <Col md="8" className="letters-container"><div className="letters-blocks">
+          {
+            letters.map((letterArray, index) => (
+            <div key={"a"+index}>{
+              letterArray.map((letter, index) => (
+                <Button className="letter" variant="outline-info" key={"b"+index}>{letter.toUpperCase()}</Button>
+              ))
+            }</div>
+            ))
+          }</div>
+
          <Button variant="outline-success" onClick={ (e) => {
             dispatch(increment(3));
             console.log(e);

@@ -1,3 +1,17 @@
 .bg-dark {
     background-color: #c34141 !important;
 }
+
+button.letter.btn.btn-outline-info {
+    width: 5rem;
+    height: 5rem;
+    font-size: 29px;
+}
+
+.letters-container{
+	text-align: center;
+}
+
+.letters-blocks {
+    margin-bottom: 20px;
+}
