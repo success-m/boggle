@@ -15,7 +15,7 @@ import {increment, descrement, letters} from './actions';
 
 function App() {
   const counter = useSelector(state => state.counterReducer);
- const letters = useSelector(state => state.lettersReducer);
+  const letters = useSelector(state => state.lettersReducer);
   const dispatch = useDispatch();
 
   return (
