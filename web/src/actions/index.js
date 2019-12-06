@@ -18,3 +18,29 @@ export const letters = (data) => {
     payload: data
   }
 }
+
+export const addletter = (data) => {
+  return {
+    type : 'ADDLETTER',
+    payload: data
+  }
+}
+
+export const addKey = (data) => {
+  return {
+    type : 'ADDKEY',
+    payload: data
+  }
+}
+
+export const resetLetter = () => {
+  return {
+    type : 'RESETLETTER'
+  }
+}
+
+export const resetKey = () => {
+  return {
+    type : 'RESETKEY'
+  }
+}

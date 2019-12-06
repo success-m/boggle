@@ -15,3 +15,9 @@ button.letter.btn.btn-outline-info {
 .letters-blocks {
     margin-bottom: 20px;
 }
+
+.btn-outline-info:hover {
+    color: #1a6975;
+    background-color: inherit;
+    border-color: #17a2b8;
+}
