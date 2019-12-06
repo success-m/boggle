@@ -10,10 +10,10 @@ import Nav from './components/nav';
 import Rules from './components/rules';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {increment, descrement, letters, 
+import {increment, resetScore, letters, 
   addletter, addKey, 
   resetLetter, resetKey} from './actions';
-
+import {getScore, getLetters} from './middleware.js';
 
 function App() {
   const counter = useSelector(state => state.counterReducer);
@@ -49,17 +49,21 @@ function App() {
             ))
           }</div>
           <p>Your Word: {word}</p>
-         <Button variant="outline-success" onClick={ (e) => {
-            dispatch(increment(3));
-            console.log(e);
+         <Button variant="outline-success" onClick={ () => {
+            dispatch(getScore(word));
           } }>Submit</Button>
-          <Button variant="outline-warning" onClick={ (e) => {
-            dispatch(descrement())
-          console.log(e);
-        } }>
+          <Button variant="outline-warning" onClick={ () => {
+            dispatch(resetLetter());
+            dispatch(resetKey());
+          } }>
             Cancel
           </Button>
-          <Button variant="outline-danger">
+          <Button variant="outline-danger" onClick={ () => {
+            dispatch(resetLetter());
+            dispatch(resetKey());
+            dispatch(resetScore());
+            dispatch(getLetters());  
+          } }>
             Restart
           </Button>
         </Col>

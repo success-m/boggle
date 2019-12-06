@@ -6,9 +6,9 @@ export const increment = (num) => {
   }
 }
 
-export const descrement = () => {
+export const resetScore = () => {
   return {
-    type : 'DECREMENT'
+    type : 'RESETSCORE'
   }
 }
 
