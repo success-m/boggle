@@ -3,21 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import {createStore} from 'redux';
-import rootReducer from './reducers';
 import { Provider } from 'react-redux';
+import store from './store.js';
+import { getLetters } from './middleware.js';
 
-//store
-let store = createStore(
-		rootReducer,
-		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-	);
 
-//store.subscribe(() => console.log(store.getState()));
-
-//store.dispatch(increment());
+store.dispatch(getLetters());
 // let GetLetters = () => {
-//   $.get('http://localhost:3000', (r) => store.dispatch(letters(r)));
+  
 
 // }
 

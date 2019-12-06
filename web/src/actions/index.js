@@ -14,7 +14,7 @@ export const descrement = () => {
 
 export const letters = (data) => {
   return {
-    type : 'Letters',
+    type : 'LETTERS',
     payload: data
   }
 }
