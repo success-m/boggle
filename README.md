@@ -1,15 +1,15 @@
 # Boggle
 
-Boggle is a cord puzzle where the players form a word from a frid of letters. It follows the following rules:
+Boggle is a word puzzle where the players form a word from a grid of letters. The rules are:
 - The letters must be adjoining in a 'chain'. (Letter cubes in the chain may be adjacent horizontally, vertically, or diagonally.)
 - Words must contain at least three letters.
 - No letter cube may be used more than once within a single word.
 
-This is an online representation of the game build with ruby on rails and react-redux.
+This is an online representation of this game.
 
 ## Getting Started
 
-Clone the repository and change directory.
+Clone the repository and change directory to the repository root.
 
 ## Backend API
 
@@ -23,7 +23,7 @@ The backend API is built with ruby on rails.
 
 ### Istallation
 
-- Install mysql2 gem. If you have any issues install related packages. Please refer https://stackoverflow.com/questions/3608287/error-installing-mysql2-failed-to-build-gem-native-extension
+- Install mysql2 gem. If you have any issues, then install related packages. Please refer https://stackoverflow.com/questions/3608287/error-installing-mysql2-failed-to-build-gem-native-extension
 - Change directory to api and follow the instructions below.
 
 ```
@@ -31,7 +31,7 @@ bundle install
 ```
 This installs additional packages.
 
-update ./api/config/database.yml with your mySQL configutations and run the following command.
+update ./api/config/database.yml with your mySQL configutations and run the following commands.
 
 ``` 
 rails db:migrate
@@ -41,16 +41,16 @@ This creates the necessary tables.
 ```
 rails db:seed
 ```
-This loads the list of words into your table. The list of words used are from https://github.com/dwyl/english-words reporsitory.
+This loads the list of words into your table. The list of words used are populated from https://github.com/dwyl/english-words reporsitory.
 
 ```
 rails s
 ```
-This starts the rails server in "http://localhost:3000"
+This starts the rails server in "http://localhost:3000".
 
 ## Front end application
 
-Front end application is build with react with redus as state manager.
+Front end application is build with react with redux as state manager.
 
 ### Prerequisites
 
@@ -59,11 +59,11 @@ Front end application is build with react with redus as state manager.
 
 ### Installation
 
-- Open a new terminal and change directory to web and follow the instructions below.
+- Open a new terminal, change directory to web and follow the instructions below.
 ``` 
 npm install
 ```
-This will install the node dependencies
+This will install the node dependencies.
 
 ```
 npm start
