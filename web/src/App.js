@@ -10,6 +10,7 @@ import Alert from 'react-bootstrap/Alert';
 import Modal from 'react-bootstrap/Modal';
 import Nav from './components/nav';
 import Rules from './components/rules';
+import UsedWords from './components/usedWords';
 
 import {useSelector, useDispatch} from 'react-redux';
 import {increment, resetScore, letters, 
@@ -81,6 +82,7 @@ function App() {
           </Alert>
         </Col>
         <Col md="4">
+          <UsedWords></UsedWords>
           <Rules></Rules>
         </Col>
       </Row>
@@ -100,7 +102,7 @@ function App() {
           <p>
             Wanna try again? 
           </p>
-          <Button variant="primary" onClick={ () => {
+          <Button variant="info" onClick={ () => {
             dispatch(restartGame());
           } }>
             Restart

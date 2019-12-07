@@ -55,3 +55,18 @@ button.game-controls.btn.btn-outline-warning:hover {
     background-color: #ffc107;
     border-color: #ffc107;
 }
+
+.card {
+    margin-bottom: 12px;
+}
+
+span.badge {
+    margin: 0 3px;
+    font-size: 14px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.hide.card {
+    display: none;
+}
