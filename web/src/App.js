@@ -56,10 +56,10 @@ function App() {
             ))
           }</div>
           <p>Your Word: {word}</p>
-         <Button variant="outline-success" onClick={ () => {
+         <Button className="game-controls" variant="outline-success" onClick={ () => {
             dispatch(getScore(word));
           } }>Submit</Button>
-          <Button variant="outline-warning" onClick={ () => {
+          <Button className="game-controls" variant="outline-warning" onClick={ () => {
             dispatch(resetLetter());
             dispatch(resetKey());
             dispatch(resetAlert({
@@ -70,7 +70,7 @@ function App() {
           } }>
             Cancel
           </Button>
-          <Button variant="outline-danger" onClick={ () => {
+          <Button className="game-controls" variant="outline-danger" onClick={ () => {
             dispatch(restartGame());
           } }>
             Restart

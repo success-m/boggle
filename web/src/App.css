@@ -1,5 +1,19 @@
-.bg-dark {
-    background-color: #c34141 !important;
+nav.navbar.navbar-expand.navbar-dark.bg-dark {
+    background-color: #41a5c3 !important;
+    color: #ffffff;
+}
+
+nav.navbar.navbar-expand.navbar-dark.bg-dark, .card-header {
+    box-shadow: 0px 5px #5B84B1FF;
+}
+
+h5.card-header {
+    background-color: #41a5c3;
+    color: #ffffff;
+}
+
+span.navbar-text{
+	color: #ffffff !important;
 }
 
 button.letter.btn.btn-outline-info {
@@ -24,4 +38,20 @@ button.letter.btn.btn-outline-info {
 
 span.timer.navbar-text {
     margin-right: 60px;
+}
+
+button.game-controls.btn {
+    margin: 0 5px;
+    min-width: 100px;
+}
+
+button.game-controls.btn.btn-outline-warning {
+    color: #b18500;
+    border-color: #b18500;
+}
+
+button.game-controls.btn.btn-outline-warning:hover {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
 }
