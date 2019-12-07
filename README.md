@@ -23,7 +23,7 @@ The backend API is built with ruby on rails.
 
 ### Istallation
 
--Install mysql2 gem. If you have any issues install related packages. Please refer https://stackoverflow.com/questions/3608287/error-installing-mysql2-failed-to-build-gem-native-extension
+- Install mysql2 gem. If you have any issues install related packages. Please refer https://stackoverflow.com/questions/3608287/error-installing-mysql2-failed-to-build-gem-native-extension
 - Change directory to api and follow the instructions below.
 
 ```
@@ -59,7 +59,7 @@ Front end application is build with react with redus as state manager.
 
 ### Installation
 
--Open a new terminal and change directory to web and follow the instructions below.
+- Open a new terminal and change directory to web and follow the instructions below.
 ``` 
 npm install
 ```
@@ -72,5 +72,5 @@ This will start the development server on "http://localhost:3001" since port 300
 
 ## Important
 
--Make sure to run the rails server first.
--The application is dependent on the rails application ruing on port 3000.
+- Make sure to run the rails server first.
+- The application is dependent on the rails application ruing on port 3000.
