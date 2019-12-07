@@ -5,13 +5,15 @@ import {useSelector} from 'react-redux';
 
 function Nav() {
   const counter = useSelector(state => state.counterReducer);
+  const timer = useSelector(state => state.timeReducer);
+
   return (
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">Boggle</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Score: {counter}
+            Time: {timer} Score: {counter}
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

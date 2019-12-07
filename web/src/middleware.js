@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import {letters, increment, resetLetter, 
-	resetKey, updateAlert, resetAlert, addWord} from './actions';
+	resetKey, updateAlert, resetAlert, addWord, addTime, resetTime} from './actions';
 
 
 export const getLetters = () => {
@@ -9,6 +9,23 @@ export const getLetters = () => {
 	}
 }
 
+export const initTimer = () => {
+	return function(dispatch, getState){
+		
+		clearInterval(window.timerInterval);
+		dispatch(resetTime());
+		window.timerInterval = setInterval(() => {
+			const {timeReducer} = getState();
+			if(timeReducer < 12){
+				dispatch(addTime());
+			}else{
+				clearInterval(window.timerInterval);
+				dispatch(resetTime());
+			}
+			
+		} , 1000);		
+	}
+}
 
 export const getScore = (word) => {
 	return function(dispatch, getState){

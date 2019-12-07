@@ -71,3 +71,15 @@ export const resetwords = (data) => {
     type : 'RESETWORDS'
   }
 }
+
+export const addTime = () => {
+  return {
+    type : 'ADDTIME'
+  }
+}
+
+export const resetTime = () => {
+  return {
+    type : 'RESETTIME'
+  }
+}

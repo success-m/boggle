@@ -15,7 +15,7 @@ import {increment, resetScore, letters,
   addletter, addKey, 
   resetLetter, resetKey,
   resetAlert,resetwords} from './actions';
-import {getScore, getLetters} from './middleware.js';
+import {getScore, getLetters, initTimer} from './middleware.js';
 
 function App() {
   const counter = useSelector(state => state.counterReducer);
@@ -23,7 +23,7 @@ function App() {
   const word = useSelector(state => state.wordReducer);
   const wordKey = useSelector(state => state.wordKeyReducer);
   const alert = useSelector(state => state.alertReducer);
-
+  
   const dispatch = useDispatch();
   return (
     <Container fluid="true">
@@ -76,7 +76,8 @@ function App() {
               display: false,
               variant: "",
               message: ""
-            }))
+            }));
+            dispatch(initTimer());
           } }>
             Restart
           </Button>
