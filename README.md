@@ -1,4 +1,4 @@
-#Boggle
+# Boggle
 
 Boggle is a cord puzzle where the players form a word from a frid of letters. It follows the following rules:
 - The letters must be adjoining in a 'chain'. (Letter cubes in the chain may be adjacent horizontally, vertically, or diagonally.)
@@ -7,18 +7,19 @@ Boggle is a cord puzzle where the players form a word from a frid of letters. It
 
 This is an online representation of the game build with ruby on rails and react-redux.
 
-##Getting Started
+## Getting Started
 
 Clone the repository and change directory.
 
-##Backend API
+## Backend API
 
 The backend API is built with ruby on rails.
 
 ### Prerequisites
 - ruby v 2.5.7
 - rails v 5.2.4
-- mySQL
+- gem v 3.0.6
+- mySQL server
 
 ### Istallation
 
@@ -47,7 +48,16 @@ rails s
 ```
 This starts the rails server in "http://localhost:3000"
 
-##Front end application
+## Front end application
+
+Front end application is build with react with redus as state manager.
+
+### Prerequisites
+
+- nodejs v 10.16.0
+- npmm v 6.9.0
+
+### Installation
 
 -Open a new terminal and change directory to web and follow the instructions below.
 ``` 
@@ -60,7 +70,7 @@ npm start
 ```
 This will start the development server on "http://localhost:3001" since port 3000 is occupied by rails server.
 
-##Important
+## Important
 
 -Make sure to run the rails server first.
 -The application is dependent on the rails application ruing on port 3000.
