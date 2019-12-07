@@ -6,6 +6,7 @@ import wordReducer from './wordReducer.js';
 import alertReducer from './alertReducer.js';
 import addedWordsReducer from './addedWordsReducer.js';
 import timeReducer from './timeReducer.js';
+import modalReducer from './modalReducer.js';
 
 import {combineReducers} from 'redux';
 
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
 	wordKeyReducer,
 	alertReducer,
 	addedWordsReducer,
-	timeReducer	
+	timeReducer,
+	modalReducer
 });
 
 export default rootReducer;

@@ -1,11 +1,30 @@
 import $ from 'jquery';
 import {letters, increment, resetLetter, 
-	resetKey, updateAlert, resetAlert, addWord, addTime, resetTime} from './actions';
+	resetKey, updateAlert, resetAlert, 
+	resetScore, resetwords, addWord, 
+	addTime, resetTime, resetModal, showModal} from './actions';
 
 
 export const getLetters = () => {
 	return function(dispatch){
 		$.get('http://localhost:3000', (r) => dispatch(letters(r)));
+	}
+}
+
+export const restartGame = () => {
+	return function(dispatch){
+		dispatch(resetLetter());
+        dispatch(resetKey());
+        dispatch(resetScore());
+        dispatch(getLetters());
+        dispatch(resetwords());
+        dispatch(resetAlert({
+            display: false,
+            variant: "",
+            message: ""
+        }));
+        dispatch(initTimer());
+        dispatch(resetModal());
 	}
 }
 
@@ -16,11 +35,15 @@ export const initTimer = () => {
 		dispatch(resetTime());
 		window.timerInterval = setInterval(() => {
 			const {timeReducer} = getState();
-			if(timeReducer < 12){
+			if(timeReducer < 180){
 				dispatch(addTime());
 			}else{
 				clearInterval(window.timerInterval);
 				dispatch(resetTime());
+				dispatch(showModal({
+					display: true,
+					message: "Your final score is "
+				}));
 			}
 			
 		} , 1000);		

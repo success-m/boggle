@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
+import Modal from 'react-bootstrap/Modal';
 import Nav from './components/nav';
 import Rules from './components/rules';
 
@@ -15,14 +16,17 @@ import {increment, resetScore, letters,
   addletter, addKey, 
   resetLetter, resetKey,
   resetAlert,resetwords} from './actions';
-import {getScore, getLetters, initTimer} from './middleware.js';
+import {getScore, getLetters, 
+  initTimer, restartGame} from './middleware.js';
 
 function App() {
+
   const counter = useSelector(state => state.counterReducer);
   const letters = useSelector(state => state.lettersReducer);
   const word = useSelector(state => state.wordReducer);
   const wordKey = useSelector(state => state.wordKeyReducer);
   const alert = useSelector(state => state.alertReducer);
+  const timerEnd = useSelector(state => state.modalReducer);
   
   const dispatch = useDispatch();
   return (
@@ -67,17 +71,7 @@ function App() {
             Cancel
           </Button>
           <Button variant="outline-danger" onClick={ () => {
-            dispatch(resetLetter());
-            dispatch(resetKey());
-            dispatch(resetScore());
-            dispatch(getLetters());
-            dispatch(resetwords());
-            dispatch(resetAlert({
-              display: false,
-              variant: "",
-              message: ""
-            }));
-            dispatch(initTimer());
+            dispatch(restartGame());
           } }>
             Restart
           </Button>
@@ -90,6 +84,30 @@ function App() {
           <Rules></Rules>
         </Col>
       </Row>
+
+      <Modal show={timerEnd["display"]}>
+        <Modal.Header>
+          <Modal.Title>Game Over</Modal.Title>
+        </Modal.Header>
+          <Modal.Body className="final-message">
+          Your three minute time is over.{counter>4?' Well Played!':''} <br/>
+          {timerEnd["message"]}
+          <span className="final-score">
+            {counter}
+          </span>
+          </Modal.Body>
+        <Modal.Footer>
+          <p>
+            Wanna try again? 
+          </p>
+          <Button variant="primary" onClick={ () => {
+            dispatch(restartGame());
+          } }>
+            Restart
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </Container>
   );
 }

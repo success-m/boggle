@@ -12,8 +12,12 @@ function Nav() {
         <Navbar.Brand href="/">Boggle</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text className="timer">
+            Time: { ('0' + Math.floor(timer / 60).toString()).slice(-2) }
+            :{ ('0' + (timer - Math.floor(timer / 60) * 60).toString()).slice(-2) }
+          </Navbar.Text>
           <Navbar.Text>
-            Time: {timer} Score: {counter}
+            Score: {counter}
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

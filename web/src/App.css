@@ -21,3 +21,7 @@ button.letter.btn.btn-outline-info {
     background-color: inherit;
     border-color: #17a2b8;
 }
+
+span.timer.navbar-text {
+    margin-right: 60px;
+}

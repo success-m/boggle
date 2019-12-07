@@ -83,3 +83,16 @@ export const resetTime = () => {
     type : 'RESETTIME'
   }
 }
+
+export const showModal = (data) => {
+  return {
+    type : 'SHOWMODAL',
+    payload: data
+  }
+}
+
+export const resetModal = () => {
+  return {
+    type : 'RESETMODAL'
+  }
+}
