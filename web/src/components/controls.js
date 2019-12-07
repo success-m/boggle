@@ -26,7 +26,7 @@ function Controls() {
               display: false,
               variant: "",
               message: ""
-            }))
+            }));
           } }>
             Cancel
           </Button>
