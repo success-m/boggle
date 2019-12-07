@@ -6,13 +6,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 import Nav from './components/nav';
 import Rules from './components/rules';
 
 import {useSelector, useDispatch} from 'react-redux';
 import {increment, resetScore, letters, 
   addletter, addKey, 
-  resetLetter, resetKey} from './actions';
+  resetLetter, resetKey,
+  resetAlert,resetwords} from './actions';
 import {getScore, getLetters} from './middleware.js';
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
   const letters = useSelector(state => state.lettersReducer);
   const word = useSelector(state => state.wordReducer);
   const wordKey = useSelector(state => state.wordKeyReducer);
+  const alert = useSelector(state => state.alertReducer);
 
   const dispatch = useDispatch();
   return (
@@ -55,6 +58,11 @@ function App() {
           <Button variant="outline-warning" onClick={ () => {
             dispatch(resetLetter());
             dispatch(resetKey());
+            dispatch(resetAlert({
+              display: false,
+              variant: "",
+              message: ""
+            }))
           } }>
             Cancel
           </Button>
@@ -62,10 +70,20 @@ function App() {
             dispatch(resetLetter());
             dispatch(resetKey());
             dispatch(resetScore());
-            dispatch(getLetters());  
+            dispatch(getLetters());
+            dispatch(resetwords());
+            dispatch(resetAlert({
+              display: false,
+              variant: "",
+              message: ""
+            }))
           } }>
             Restart
           </Button>
+          <hr/>
+          <Alert variant={alert["variant"]} isOpen={alert["display"]} >
+            {alert["message"]}
+          </Alert>
         </Col>
         <Col md="4">
           <Rules></Rules>

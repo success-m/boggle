@@ -44,3 +44,30 @@ export const resetKey = () => {
     type : 'RESETKEY'
   }
 }
+
+export const updateAlert = (data) => {
+  return {
+    type : 'UPDATEALERT',
+    payload: data
+  }
+}
+
+export const resetAlert = (data) => {
+  return {
+    type : 'RESETALERT',
+    payload: data
+  }
+}
+
+export const addWord = (data) => {
+  return {
+    type : 'ADDWORD',
+    payload: data
+  }
+}
+
+export const resetwords = (data) => {
+  return {
+    type : 'RESETWORDS'
+  }
+}
