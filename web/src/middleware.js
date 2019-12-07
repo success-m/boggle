@@ -12,6 +12,8 @@ export const getLetters = () => {
 
 export const getScore = (word) => {
 	return function(dispatch, getState){
+		clearTimeout(window.alertTimeout);
+
 		const { addedWordsReducer } = getState();
 		dispatch(resetLetter());
         dispatch(resetKey());
@@ -23,7 +25,7 @@ export const getScore = (word) => {
 				message: "Oops, You can't submit "+word+" twice."
 			}));
 
-			setTimeout(() => {
+			window.alertTimeout = setTimeout(() => {
 				dispatch(resetAlert({
 			    	display: false,
 			        variant: "",
@@ -41,7 +43,7 @@ export const getScore = (word) => {
 					dispatch(updateAlert({
 						display: true,
 						variant: "danger",
-						message: "Oops, that is not a word."
+						message: "Oops, "+word+" is not a word."
 					}));				
 				}else{
 					dispatch(addWord([word]));
@@ -52,7 +54,7 @@ export const getScore = (word) => {
 					}));
 				}
 
-				setTimeout(() => {
+				window.alertTimeout = setTimeout(() => {
 					dispatch(resetAlert({
 		              display: false,
 		              variant: "",
@@ -68,7 +70,7 @@ export const getScore = (word) => {
 						message: "Oops, a word must be of at least three letters."
 					}));
 
-					setTimeout(() => {
+					window.alertTimeout = setTimeout(() => {
 						dispatch(resetAlert({
 			              display: false,
 			              variant: "",
