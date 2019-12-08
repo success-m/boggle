@@ -21,7 +21,7 @@ The backend API is built with ruby on rails.
 - gem v 3.0.6
 - mySQL server
 
-### Istallation
+### Installation
 
 - Install mysql2 gem. If you have any issues, then install related packages. Please refer https://stackoverflow.com/questions/3608287/error-installing-mysql2-failed-to-build-gem-native-extension
 - Change directory to api and follow the instructions below.
